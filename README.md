@@ -67,6 +67,7 @@ ExecStart=/home/pi/UniversalGcodeSender/start-cli.sh -d -w /home/pi/workspace
 WantedBy=multi-user.target
 EOF'
 
+# Install and restart UGS service
 sudo systemctl daemon-reload
 sudo systemctl enable ugs.service
 sudo service ugs restart
