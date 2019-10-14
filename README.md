@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Installation
 Copy and paste this script to a terminal to download and install a new version of the frontend and backend:
-```
+```bash
 # Install required software
 sudo apt update
 curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
@@ -53,7 +53,7 @@ cd ~/UniversalGcodeSender
 chmod +x start-cli.sh
 
 # Setup UGS autostart
-sudo bash -c 'cat << EOF >  /lib/systemd/system/ugs.service
+sudo bash -c 'cat << EOF > /lib/systemd/system/ugs.service
 [Unit]
 Description=Start UGS
 After=multi-user.target
