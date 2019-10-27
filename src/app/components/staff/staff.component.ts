@@ -10,6 +10,21 @@ import { Status } from '../../model/status';
 import { StateEnum } from '../../model/state-enum';
 import { environment } from '../../../environments/environment';
 
+enum WorkflowStateEnum {
+  WORKING = 'WORKING',
+  STARTING = 'STARTING',
+  KILLING_ALARM = 'KILLING_ALARM',
+  HOMING = 'HOMING',
+  MOVE_TO_ORIGIN = 'MOVE_TO_ORIGIN',
+  MOVE_TO_EJECT = 'MOVE_TO_EJECT',
+  SENDING = 'SENDING',
+  FINISHED = 'FINISHED',
+  EJECTING = 'EJECTING',
+  ABORTED = 'ABORTED'
+}
+
+
+
 @Component({
   selector: 'app-staff',
   templateUrl: './staff.component.html',
@@ -58,10 +73,35 @@ export class StaffComponent implements OnInit, OnDestroy {
     this.workflowManager.stop().subscribe();
   }
 
-  returnToStart() {
+  movetoEject() {
     this.workflowManager.stop().subscribe(() => {
       this.workflowManager.setFile('');
-      this.machineService.sendCommands(environment.moveToOriginCommand).subscribe();
+      this.machineService.homeMachine().subscribe(() => {
+      console.log("Homing");
+      }),
+      this.machineService.sendCommands(environment.moveToEjectCommand).subscribe();
+      this.router.navigate(['/select-file']);
+    });
+  }
+
+  movetoLoad() {
+    this.workflowManager.stop().subscribe(() => {
+      this.workflowManager.setFile('');
+      this.machineService.homeMachine().subscribe(() => {
+      console.log("Homing");
+      }),
+      this.machineService.sendCommands(environment.moveToLoadCommand).subscribe();
+      this.router.navigate(['/select-file']);
+    });
+  }
+
+   movetochangeBit() {
+    this.workflowManager.stop().subscribe(() => {
+      this.workflowManager.setFile('');
+      this.machineService.homeMachine().subscribe(() => {
+      console.log("Homing");
+      }),
+      this.machineService.sendCommands(environment.changeBitCommand).subscribe();
       this.router.navigate(['/select-file']);
     });
   }

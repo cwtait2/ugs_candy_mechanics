@@ -2,9 +2,10 @@
   <div class="controlButtons">
     <button class="btn btn-secondary yellow" (click)="disconnect()">Disconnect from machine</button>
     <button class="btn btn-secondary blue" (click)="resetMachine()">Stop and reset machine</button>
-    <button class="btn btn-secondary darkblue" [disabled]="!isIdle()" (click)="returnToStart()">Return to start</button>
-    <button class="btn btn-secondary pink" [disabled]="isIdle()" (click)="stopSending()">Stop sending</button>
-  </div>
+    <button class="btn btn-secondary darkblue" [disabled]="!isIdle()" (click)="movetoEject()">Move to Eject</button>
+    <button class="btn btn-secondary pink" [disabled]="!isIdle()" (click)="movetoLoad()">Move to Load</button>
+    <button class="btn btn-secondary yellow" [disabled]="!isIdle()" (click)="movetochangeBit()">Change Bit</button>
+    </div>
 </div>
 
 <div class="back-btn-container">
