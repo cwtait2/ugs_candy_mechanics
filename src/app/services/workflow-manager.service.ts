@@ -17,6 +17,7 @@ enum WorkflowStateEnum {
   KILLING_ALARM = 'KILLING_ALARM',
   HOMING = 'HOMING',
   MOVE_TO_ORIGIN = 'MOVE_TO_ORIGIN',
+  MOVE_TO_EJECT = 'MOVE_TO_EJECT',
   SENDING = 'SENDING',
   FINISHED = 'FINISHED',
   EJECTING = 'EJECTING',
@@ -140,6 +141,21 @@ export class WorkflowManagerService {
       console.error('Could not move to origin');
     });
   }
+
+moveToEject() {
+    // Changing the state to let others know we are busy
+    console.log(' - Moving to Eject');
+    this.workflowState = WorkflowStateEnum.WORKING;
+
+    this.machineService.sendCommands(environment.moveToEjectCommand).subscribe(() => {
+      this.workflowState = WorkflowStateEnum.MOVE_TO_EJECT;
+      this.previousState = StateEnum.UNKNOWN;
+    },
+    (error) => {
+      console.error('Could not move to eject');
+    });
+  }
+
 
   sendFile() {
     // Changing the state to let others know we are busy
