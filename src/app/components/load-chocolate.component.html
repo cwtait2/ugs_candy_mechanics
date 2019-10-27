@@ -1,0 +1,26 @@
+<section class="step-3 show" id="step-3">
+	<h6>STEP 3:</h6>
+	<h1>{{getName()}}, insert your chocolate</h1>
+	<video id="video" preload autoplay muted>
+		<source src="/assets/videos/INSERTING.mp4" type="video/mp4">
+	</video>
+</section>
+
+
+<section class="step-4" id="step-4">
+	<div class="d-flex flex-column justify-content-center align-items-center">
+		<h6>STEP 4:</h6>
+		<h1>
+		  Is your chocolate in the machine?
+		</h1>
+		<div class="button-container">
+			<button class="btn btn-secondary" id="btn-no">No</button>
+			<button class="btn btn-secondary" [routerLink]="['/start-printing']">Yes</button>
+		</div>
+	</div>
+</section>
+
+<div class="back-btn-container">
+  <a [routerLink]="['/select-file']" class="back-btn">Back</a>
+</div>
+
