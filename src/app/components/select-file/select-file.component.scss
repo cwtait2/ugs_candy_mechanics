@@ -117,7 +117,7 @@ section.step-3.show {
 .fileSelect {
   width:30em;
   height:18em;
-  margin:1em auto 0;
+  margin:0em auto 0;
   overflow:hidden;
   border-style: solid;
   border-color: $darkgrey;
@@ -137,7 +137,7 @@ section.step-3.show {
 
   li {
     list-style-type: none;
-    margin-bottom: 1.5em;
+    margin-bottom: 1em;
     margin-right: 10px;
     margin-left: 10px;
   }
@@ -165,11 +165,11 @@ section.step-3.show {
   -webkit-appearance: none;
   background-color: #e6e6e6;
   width: 20px;
-  border-radius: 20px;
+  border-radius: 30px;
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 20px;
+  border-radius: 30px;
   background-color: white;
   border:solid #e6e6e6;
   -webkit-box-shadow: none;

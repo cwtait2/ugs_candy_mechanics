@@ -69,6 +69,8 @@ export class SelectFileComponent implements OnInit, OnDestroy {
       current = 2;
     });
 
+     
+
     _backBtn.addEventListener('click', function(e) {
       e.preventDefault();
       if(current === 1) {
@@ -88,6 +90,9 @@ export class SelectFileComponent implements OnInit, OnDestroy {
       _help.classList.add('show');
       _staffBtnContainer.classList.add('show');
     }
+
+    
+
   }
 
   ngOnDestroy() {
