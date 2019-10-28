@@ -21,9 +21,9 @@ export class HeaderComponent implements OnInit {
     const _staffBtn = document.getElementById('staff-btn');
 
     _helpBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      _help.classList.add('show');
-      _staffBtnContainer.classList.add('show');
+  	  e.preventDefault();
+  	  _help.classList.add('show');
+  	  _staffBtnContainer.classList.add('show');
     });
 
     _staffBtn.addEventListener('click', function(e) {
