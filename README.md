@@ -33,7 +33,7 @@ sudo service nginx restart
 cd ~
 rm ugs_candy_mechanics-master.zip
 rm -rf ugs_candy_mechanics-master
-wget -O ugs_candy_mechanics-master.zip "https://github.com/breiler/ugs_candy_mechanics/archive/master.zip"
+wget -O ugs_candy_mechanics-master.zip "https://github.com/cwtait2/ugs_candy_mechanics/archive/master.zip"
 unzip -e ugs_candy_mechanics-master.zip
 
 # Compile and install web application
