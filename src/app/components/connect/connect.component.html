@@ -1,7 +1,7 @@
 <form>
   <div class="form-group">
     <div class="form-group">
-      <label for="port-select">Port</label>
+      <label for="port-select">Select the USB0 option and click connect</label>
       <select class="form-control" id="port-select" name='port-select' (change)="onSelectPort($event)"
               [(ngModel)]="selectedPort">
         <option *ngFor="let port of portList" [ngValue]="port">{{port}}</option>
